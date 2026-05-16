@@ -3,75 +3,7 @@ const supabaseUrl = 'https://cvdlqhjkcgbjezqixsci.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN2ZGxxaGprY2diamV6cWl4c2NpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg4NTYwMjMsImV4cCI6MjA5NDQzMjAyM30.msfkqmZiyveV4JOJVyk1EuhOfxwbqrrXyMLFlhi2o1U';
 const supabaseClient = window.supabase.createClient(supabaseUrl, supabaseKey);
 
-// GALLERY DATA
-const defaultGalleryItems = [
-    {
-        id: 1,
-        title: 'Wedding Campaign Poster',
-        category: 'poster',
-        image: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&h=400&fit=crop',
-        description: 'Modern wedding celebration poster design with elegant typography and vibrant colors.'
-    },
-    {
-        id: 2,
-        title: 'E-Commerce Website',
-        category: 'website',
-        image: 'https://images.unsplash.com/photo-1460925895917-adf4198c839f?w=600&h=400&fit=crop',
-        description: 'Responsive e-commerce platform with modern UI and seamless user experience.'
-    },
-    {
-        id: 3,
-        title: 'Festival Event Poster',
-        category: 'poster',
-        image: 'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=600&h=400&fit=crop',
-        description: 'Vibrant festival poster featuring cultural elements and bold typography.'
-    },
-    {
-        id: 4,
-        title: 'Corporate Portfolio Site',
-        category: 'website',
-        image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop',
-        description: 'Professional corporate website showcasing services and portfolio with elegant design.'
-    },
-    {
-        id: 5,
-        title: 'Product Launch Poster',
-        category: 'poster',
-        image: 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=600&h=400&fit=crop',
-        description: 'Eye-catching product launch poster with modern minimalist design approach.'
-    },
-    {
-        id: 6,
-        title: 'SaaS Landing Page',
-        category: 'website',
-        image: 'https://images.unsplash.com/photo-1556656793-08538906a9f8?w=600&h=400&fit=crop',
-        description: 'High-converting SaaS landing page with conversion-focused design elements.'
-    },
-    {
-        id: 7,
-        title: 'Music Event Poster',
-        category: 'poster',
-        image: 'https://images.unsplash.com/photo-1487180144351-b8472da7d491?w=600&h=400&fit=crop',
-        description: 'Dynamic music event poster with striking visual hierarchy and modern aesthetics.'
-    },
-    {
-        id: 8,
-        title: 'Restaurant Website',
-        category: 'website',
-        image: 'https://images.unsplash.com/photo-1504674900967-a8d3ba5ed2f5?w=600&h=400&fit=crop',
-        description: 'Beautiful restaurant website featuring menu showcase and reservation system.'
-    },
-    {
-        id: 9,
-        title: 'Conference Poster',
-        category: 'poster',
-        image: 'https://images.unsplash.com/photo-1540575467063-178f50902f4b?w=600&h=400&fit=crop',
-        description: 'Professional conference poster with clean layout and corporate branding.'
-    }
-];
-
-let galleryItems = [...defaultGalleryItems];
-
+let galleryItems = [];
 let currentFilter = 'all';
 
 // INITIALIZE
@@ -92,7 +24,7 @@ async function loadGalleryFromSupabase() {
         if (data && data.length > 0) {
             galleryItems = data;
         } else {
-            galleryItems = [...defaultGalleryItems];
+            galleryItems = [];
         }
         
         renderGallery();
@@ -103,7 +35,7 @@ async function loadGalleryFromSupabase() {
         }
     } catch (error) {
         console.error('Error loading gallery:', error);
-        galleryItems = [...defaultGalleryItems];
+        galleryItems = [];
         renderGallery();
     }
 }
