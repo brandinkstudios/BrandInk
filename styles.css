@@ -237,11 +237,24 @@ input, select, textarea {
     transition: all 0.3s ease;
     background-color: #5B0E14;
     color: #FFFFFF;
+    object-fit: cover;
 }
 
 .navbar.scrolled .logo-circle {
     background-color: #FFFFFF;
     color: #5B0E14;
+}
+
+.logo-burgundy-bg {
+    display: none;
+}
+
+.navbar.scrolled .logo-burgundy-bg {
+    display: flex;
+}
+
+.navbar.scrolled .logo-white-bg {
+    display: none;
 }
 
 .logo-text {
@@ -954,6 +967,7 @@ input, select, textarea {
     font-weight: 900;
     font-size: 1.125rem;
     color: #FFFFFF;
+    object-fit: cover;
 }
 
 .footer-info {
@@ -1198,6 +1212,7 @@ input, select, textarea {
     justify-content: center;
     font-weight: 900;
     color: #5B0E14;
+    object-fit: cover;
 }
 
 .chat-header-info h4 {
