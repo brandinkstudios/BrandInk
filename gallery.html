@@ -67,42 +67,7 @@
         </div>
     </div>
 
-    <!-- SECRET PROMPT MODAL -->
-    <div id="secretPromptModal" class="lightbox-modal" onclick="closeSecretPrompt(event)">
-        <div class="lightbox-content prompt-content" onclick="event.stopPropagation()">
-            <button class="lightbox-close" onclick="closeSecretPrompt()">✕</button>
-            <div class="lightbox-info">
-                <h3 style="margin-bottom: 1rem;">Developer Access</h3>
-                <input type="password" id="secretInput" placeholder="Enter Access Key" class="admin-input">
-                <button onclick="checkSecret()" class="gallery-card-view-btn" style="margin-top: 1rem;">Authenticate</button>
-            </div>
-        </div>
-    </div>
 
-    <!-- ADMIN PANEL -->
-    <div id="adminPanel" class="admin-panel hidden">
-        <div class="admin-header">
-            <h2>Admin Dashboard</h2>
-            <button class="home-btn" style="position: relative; top: 0; left: 0;" onclick="closeAdmin()">Close Admin</button>
-        </div>
-        <div class="admin-content">
-            <div class="admin-form">
-                <h3>Add New Project</h3>
-                <input type="text" id="newTitle" placeholder="Project Title" class="admin-input">
-                <select id="newCategory" class="admin-input">
-                    <option value="website">Website</option>
-                    <option value="poster">Poster</option>
-                    <option value="logo">Logo</option>
-                </select>
-                <input type="text" id="newImage" placeholder="Image URL" class="admin-input">
-                <textarea id="newDesc" placeholder="Project Description" class="admin-input" rows="3"></textarea>
-                <button onclick="addProject()" class="gallery-card-view-btn">Add Project</button>
-            </div>
-            <div class="admin-list" id="adminProjectList">
-                <!-- Admin project items will be injected here -->
-            </div>
-        </div>
-    </div>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="gallery.js"></script>
 </body>
